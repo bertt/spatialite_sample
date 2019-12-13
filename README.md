@@ -1,9 +1,21 @@
 # spatialite_sample
 
-Sample for reading spatialite database in .NET Framework 4.7 (Project: spatialite_sample_net)
+Sample for reading spatialite database in .NET Core 3.1 
 
-Todo: Get this working in .NET Core (Project: spatialite_sample_core). 
+Note: Solution platform must be set to x86 to get this project running
 
-Error when running this project: "exited with code -1073741819"
+## Running
+
+```
+$ git clone https://github.com/bertt/spatialite_sample
+$ cd spatialite_sample
+$ dotnet build
+$ dotnet run
+```
+
+
+## Todo
+
+Get this working on Linux/Docker/Mac platform.
 
 

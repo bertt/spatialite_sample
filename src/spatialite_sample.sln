@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29521.150
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spatialite_sample_net", "spatialite_sample_net\spatialite_sample_net.csproj", "{00FB9E10-4D46-49B5-A522-05B862CA7EA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "spatialite_sample_core", "spatialite_sample_core\spatialite_sample_core.csproj", "{261B8EFC-E4FF-41D8-82C7-040FBAC452F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spatialite_sample_core", "spatialite_sample_core\spatialite_sample_core.csproj", "{261B8EFC-E4FF-41D8-82C7-040FBAC452F7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spatialite_sample_lib", "spatialite_sample_lib\spatialite_sample_lib.csproj", "{141EC20E-755F-439F-BB15-772A137071BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "spatialite_sample_lib", "spatialite_sample_lib\spatialite_sample_lib.csproj", "{141EC20E-755F-439F-BB15-772A137071BB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{8867524C-C14F-4419-ACC3-F791EBCE4F54}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,21 +15,37 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{00FB9E10-4D46-49B5-A522-05B862CA7EA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{00FB9E10-4D46-49B5-A522-05B862CA7EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{00FB9E10-4D46-49B5-A522-05B862CA7EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{00FB9E10-4D46-49B5-A522-05B862CA7EA3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{261B8EFC-E4FF-41D8-82C7-040FBAC452F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{261B8EFC-E4FF-41D8-82C7-040FBAC452F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{261B8EFC-E4FF-41D8-82C7-040FBAC452F7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{261B8EFC-E4FF-41D8-82C7-040FBAC452F7}.Debug|x64.Build.0 = Debug|Any CPU
+		{261B8EFC-E4FF-41D8-82C7-040FBAC452F7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{261B8EFC-E4FF-41D8-82C7-040FBAC452F7}.Debug|x86.Build.0 = Debug|Any CPU
 		{261B8EFC-E4FF-41D8-82C7-040FBAC452F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{261B8EFC-E4FF-41D8-82C7-040FBAC452F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{261B8EFC-E4FF-41D8-82C7-040FBAC452F7}.Release|x64.ActiveCfg = Release|Any CPU
+		{261B8EFC-E4FF-41D8-82C7-040FBAC452F7}.Release|x64.Build.0 = Release|Any CPU
+		{261B8EFC-E4FF-41D8-82C7-040FBAC452F7}.Release|x86.ActiveCfg = Release|Any CPU
+		{261B8EFC-E4FF-41D8-82C7-040FBAC452F7}.Release|x86.Build.0 = Release|Any CPU
 		{141EC20E-755F-439F-BB15-772A137071BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{141EC20E-755F-439F-BB15-772A137071BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{141EC20E-755F-439F-BB15-772A137071BB}.Debug|x64.ActiveCfg = Debug|x64
+		{141EC20E-755F-439F-BB15-772A137071BB}.Debug|x64.Build.0 = Debug|x64
+		{141EC20E-755F-439F-BB15-772A137071BB}.Debug|x86.ActiveCfg = Debug|x86
+		{141EC20E-755F-439F-BB15-772A137071BB}.Debug|x86.Build.0 = Debug|x86
 		{141EC20E-755F-439F-BB15-772A137071BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{141EC20E-755F-439F-BB15-772A137071BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{141EC20E-755F-439F-BB15-772A137071BB}.Release|x64.ActiveCfg = Release|x64
+		{141EC20E-755F-439F-BB15-772A137071BB}.Release|x64.Build.0 = Release|x64
+		{141EC20E-755F-439F-BB15-772A137071BB}.Release|x86.ActiveCfg = Release|x86
+		{141EC20E-755F-439F-BB15-772A137071BB}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
