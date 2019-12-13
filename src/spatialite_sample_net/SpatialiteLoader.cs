@@ -3,7 +3,7 @@ using System.Data.SQLite;
 using System.IO;
 using System.Reflection;
 
-namespace SpatialiteSharp
+namespace spatialite_sample_net
 {
 	public class SpatialiteLoader
 	{
