@@ -1,8 +1,6 @@
 # spatialite_sample
 
-Sample for reading spatialite database in .NET Core 3.1 
-
-Note: Solution platform must be set to x86 to get this project running
+Sample for reading SpatiaLite database in .NET Core 3.1 
 
 ## Running
 
@@ -12,7 +10,6 @@ $ cd spatialite_sample
 $ dotnet build
 $ dotnet run
 ```
-
 
 ## Todo
 
