@@ -14,8 +14,12 @@ namespace spatialite_sample_core
             var connection = new SQLiteConnection(connectString);
             connection.Open();
             connection.EnableExtensions(true);
-            SpatialiteLoader.Load(connection);
 
+#if Windows
+             SpatialiteLoader.Load(connection);
+#elif Linux
+             connection.LoadExtension("mod_spatialite");
+#endif
             string sql = "SELECT Name, ST_MINX(geometry), ST_MINY(geometry), ST_MAXX(geometry), ST_MAXY(geometry) FROM Towns ";
 
             using (var command = new SQLiteCommand(sql, connection))
@@ -37,7 +41,6 @@ namespace spatialite_sample_core
 
             connection.Close();
             connection.Dispose();
-
         }
     }
 }
