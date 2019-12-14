@@ -17,7 +17,7 @@ namespace spatialite_sample_core
 
 #if Windows
              SpatialiteLoader.Load(connection);
-#elif Linux
+#elif OSX || Linux
              connection.LoadExtension("mod_spatialite");
 #endif
             string sql = "SELECT Name, ST_MINX(geometry), ST_MINY(geometry), ST_MAXX(geometry), ST_MAXY(geometry) FROM Towns ";

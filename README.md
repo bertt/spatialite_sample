@@ -1,6 +1,6 @@
 # spatialite_sample
 
-Sample for reading SpatiaLite database in .NET Core 3.1 in Windows/Linux
+Sample for reading SpatiaLite database in .NET Core 3.1 on Mac/Linux/Windows
 
 ## SpatiaLite Dependencies
 
@@ -10,8 +10,13 @@ For Linux install libsqlite3-mod-spatialite:
 $ apt-get install libsqlite3-mod-spatialite
 ```
 
-For Windows the SpatiaLite dll's are in the project spatialite_sample_lib
+For Mac install libspatialite
 
+```
+$ brew install libspatialite
+```
+
+For Windows the SpatiaLite dll's are in the project spatialite_sample_lib
 
 ## Running
 
@@ -24,9 +29,4 @@ $ dotnet run
 
 ## Todo
 
-- Check support on Mac
-
 - Create Docker sample
-
-
-
