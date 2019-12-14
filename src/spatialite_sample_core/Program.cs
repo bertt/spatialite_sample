@@ -1,6 +1,7 @@
 ﻿using spatialite_sample_net;
 using System;
 using System.Data.SQLite;
+using Wkx;
 
 namespace spatialite_sample_core
 {
@@ -20,23 +21,17 @@ namespace spatialite_sample_core
 #elif OSX || Linux
              connection.LoadExtension("mod_spatialite");
 #endif
-            string sql = "SELECT Name, ST_MINX(geometry), ST_MINY(geometry), ST_MAXX(geometry), ST_MAXY(geometry) FROM Towns ";
 
-            using (var command = new SQLiteCommand(sql, connection))
+            string sql = "SELECT Name, ST_ASBinary(geometry) FROM Towns ";
+
+            using var command = new SQLiteCommand(sql, connection);
+            using var reader = command.ExecuteReader();
+            while (reader.Read())
             {
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        var name = reader.GetString(0);
-                        double minX = reader.GetDouble(1);
-                        double minY = reader.GetDouble(2);
-                        double maxX = reader.GetDouble(3);
-                        double maxY = reader.GetDouble(4);
-
-                        Console.WriteLine($"{name}: {minX}, {minY}, {maxX}, {maxY}");
-                    }
-                }
+                var name = reader.GetString(0);
+                var geometry = Geometry.Deserialize<WkbSerializer>((byte[])reader[1]);
+                var point = (Point)geometry;
+                Console.WriteLine($"{name}: {point.X}, {point.Y}");
             }
 
             connection.Close();
