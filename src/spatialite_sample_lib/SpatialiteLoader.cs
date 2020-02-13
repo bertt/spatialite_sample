@@ -1,5 +1,5 @@
-﻿using System;
-using System.Data.SQLite;
+﻿using Microsoft.Data.Sqlite;
+using System;
 using System.IO;
 using System.Reflection;
 
@@ -11,7 +11,7 @@ namespace spatialite_sample_net
 		
 		private static bool _haveSetPath;
 
-		public static void Load(SQLiteConnection conn)
+		public static void Load(SqliteConnection conn)
 		{
 			lock (Lock)
 			{

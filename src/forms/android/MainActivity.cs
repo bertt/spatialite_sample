@@ -6,6 +6,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Content.Res;
+using System.Threading.Tasks;
+using System.IO;
 
 namespace spatialite_sample_xamarin_forms.Droid
 {
@@ -21,6 +24,7 @@ namespace spatialite_sample_xamarin_forms.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            DeployDatabaseFromAssetsAsync();
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -28,6 +32,26 @@ namespace spatialite_sample_xamarin_forms.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+
+        public void DeployDatabaseFromAssetsAsync()
+        {
+            var databaseName = "test-2.3.sqlite";
+
+            // Android application default folder.
+            var appFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData);
+            var dbFile = Path.Combine(appFolder, databaseName);
+
+            // Check if the file already exists.
+            if (!File.Exists(dbFile))
+            {
+                using (FileStream writeStream = new FileStream(dbFile, FileMode.OpenOrCreate, FileAccess.Write))
+                {
+                    // Assets is comming from the current context.
+                    Assets.Open(databaseName).CopyTo(writeStream);
+                }
+            }
         }
     }
 }

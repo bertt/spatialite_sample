@@ -10,7 +10,7 @@
         <!-- Place new controls here -->
         <Label Text="Welcome to Xamarin.Forms!" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+           VerticalOptions="CenterAndExpand" x:Name="lblTest"/>
     </StackLayout>
 
 </ContentPage>
