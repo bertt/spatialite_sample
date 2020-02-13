@@ -37,4 +37,6 @@ In the sample library Wkx-sharp (https://github.com/cschwarz/wkx-sharp) is used 
 
 ## Todo
 
+- Get the Xamarin.Forms - Android and iOS samples working
+
 - Create Docker sample
