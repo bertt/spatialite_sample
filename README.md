@@ -71,6 +71,11 @@ POINT(17.873887 -11.202692)
 POINT(-0.071389 -75.250973)
 ```
 
+ alternative method: use a recent version of sqlite3 with Load Extensions support and load the SpatiaLite extensions:
+ 
+ ```
+ $ .load /usr/local/lib/mod_spatialite.dylib
+ ```
 
 ## SpatiaLite Dependencies
 
