@@ -17,7 +17,7 @@ jobs:
         dotnet-version: 6.0.x
     - name: Test
       working-directory: src
-      run: dotnet test
+      run: apt-get update & apt-get install libsqlite3-mod-spatialite & dotnet test
   testing-windows:
     runs-on: windows-latest
     steps:
