@@ -15,18 +15,18 @@ namespace Spatialite.Testing
         private string db = @"testfixtures/countries.sqlite";
 
         [Test]
-        public async Task ReadSpatialiteDataTest()
+        public voidReadSpatialiteDataTest()
         {
             SqlMapper.AddTypeHandler(new GeometryTypeHandler());
             string sql = "SELECT name, ST_ASBinary(GEOMETRY) as geometry FROM countries";
 
             string connectString = "Data Source=" + db;
             var connection = new SqliteConnection(connectString);
-            await connection.OpenAsync();
+            connection.Open();
             connection.EnableExtensions(true);
 
             SpatialLoader(connection);
-            var countries = await connection.QueryAsync<Country>(sql);
+            var countries = connection.Query<Country>(sql);
             Assert.IsTrue(countries.AsList().Count == 245);
             var country1 = countries.First();
             Assert.IsTrue(country1.Name == "Andorra");
