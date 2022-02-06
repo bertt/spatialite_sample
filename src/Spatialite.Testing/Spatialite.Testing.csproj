@@ -19,13 +19,17 @@
     <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
     <PackageReference Include="coverlet.collector" Version="3.1.0" />
   </ItemGroup>
-    <ItemGroup Label="Windows only includes" Condition=" '$(OS)' == 'Windows_NT' ">
+    <ItemGroup Label="Windows only includes" Condition="$([MSBuild]::IsOSPlatform('Windows'))">
        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.1" />
     </ItemGroup>
-  <ItemGroup Label="Linux only includes" Condition=" '$(OS)' != 'Windows_NT' ">
+  <ItemGroup Label="Linux only includes" Condition="$([MSBuild]::IsOSPlatform('Linux')) ">
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="6.0.1"  />
     <PackageReference Include="SQLitePCLRaw.bundle_sqlite3" Version="2.0.7" />
   </ItemGroup>
+  <ItemGroup Label="Linux only includes" Condition="$([MSBuild]::IsOSPlatform('OSX')) ">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="6.0.1"  />
+  </ItemGroup>
+   
 
   <ItemGroup>
     <None Update="testfixtures\countries.sqlite">
