@@ -18,14 +18,3 @@ jobs:
     - name: Test
       working-directory: src
       run: dotnet test
-  testing-mac:
-    runs-on: macos-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 6.0.x
-    - name: Test
-      working-directory: src
-      run: brew install libspatialite & dotnet test
