@@ -20,8 +20,10 @@ namespace Spatialite.Testing
 
             string connectString = "Data Source=" + db;
             var connection = new SqliteConnection(connectString);
-            SpatialiteLoader.Load(connection);
             await connection.OpenAsync();
+            connection.EnableExtensions();
+
+            SpatialiteLoader.Load(connection);
             var countries = await connection.QueryAsync<Country>(sql);
             Assert.IsTrue(countries.AsList().Count == 245);
             var country1 = countries.First();
