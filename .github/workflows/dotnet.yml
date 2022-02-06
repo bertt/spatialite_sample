@@ -34,4 +34,4 @@ jobs:
       run: dotnet build
     - name: Test
       working-directory: src
-      run: sudo apk-get update & sudo apt-get install libsqlite3-mod-spatialite & dotnet test
+      run: sudo apt-get update & sudo apt-get install libsqlite3-mod-spatialite -y & dotnet test
