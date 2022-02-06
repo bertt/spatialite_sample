@@ -21,8 +21,8 @@ jobs:
     - name: Test
       working-directory: src
       run: dotnet test
-  testing-linux:
-    runs-on: linux-latest
+  testing-ubuntu:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
