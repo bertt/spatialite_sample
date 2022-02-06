@@ -105,6 +105,16 @@ For code see SpatialiteDapperNtsTests.cs
     }
 ```
 
+Not: On Windows the test should work, on other platforms install dependency:
+
+```
+# Debian/Ubuntu
+$ apt-get install libsqlite3-mod-spatialite
+
+# Mac OS
+$ brew install libspatialite
+```
+
 Code dependencies:
 
 - NetTopologySuite.Geometries - for deserialize the geometry
