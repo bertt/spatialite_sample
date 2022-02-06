@@ -35,11 +35,15 @@ namespace Spatialite.Testing
             connection.Close();
         }
 
-        private void SpatialLoader(DbConnection connection)
+        private void SpatialLoader(SqliteConnection connection)
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 SpatialiteLoader.Load(connection);
+            }
+            else
+            {
+                connection.LoadExtension("mod_spatialite");
             }
         }
     }
