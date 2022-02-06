@@ -7,6 +7,17 @@ on:
     branches: [ master ]
 
 jobs:
+  testing-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Test
+      working-directory: src
+      run: dotnet test
   testing-windows:
     runs-on: windows-latest
     steps:
