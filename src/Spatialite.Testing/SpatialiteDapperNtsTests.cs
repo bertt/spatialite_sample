@@ -15,7 +15,7 @@ namespace Spatialite.Testing
         private string db = @"testfixtures/countries.sqlite";
 
         [Test]
-        public voidReadSpatialiteDataTest()
+        public void ReadSpatialiteDataTest()
         {
             SqlMapper.AddTypeHandler(new GeometryTypeHandler());
             string sql = "SELECT name, ST_ASBinary(GEOMETRY) as geometry FROM countries";
