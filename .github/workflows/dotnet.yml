@@ -15,23 +15,17 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
-    - name: Build
-      working-directory: src
-      run: dotnet build
     - name: Test
       working-directory: src
       run: dotnet test
-  testing-ubuntu:
-    runs-on: ubuntu-latest
+  testing-mac:
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
-    - name: Build
-      working-directory: src
-      run: dotnet build
     - name: Test
       working-directory: src
-      run: sudo apt-get update & sudo apt-get install libsqlite3-mod-spatialite -y & dotnet test
+      run: brew install libspatialite & dotnet test
