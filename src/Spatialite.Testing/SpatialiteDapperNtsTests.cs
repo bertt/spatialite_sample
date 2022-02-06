@@ -23,7 +23,7 @@ namespace Spatialite.Testing
             string connectString = "Data Source=" + db;
             var connection = new SqliteConnection(connectString);
             await connection.OpenAsync();
-            connection.EnableExtensions();
+            connection.EnableExtensions(true);
 
             SpatialLoader(connection);
             var countries = await connection.QueryAsync<Country>(sql);
