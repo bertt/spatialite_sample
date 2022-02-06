@@ -17,7 +17,7 @@ jobs:
         dotnet-version: 6.0.x
     - name: Test
       working-directory: src
-      run: brew upgrade sqlite3 --force & sqlite3 --version & brew install libspatialite & dotnet test
+      run: brew update sqlite3 & export PATH="/usr/local/opt/sqlite/bin:$PATH" & sqlite3 --version & brew install libspatialite & dotnet test
   testing-ubuntu:
     runs-on: ubuntu-latest
     steps:
