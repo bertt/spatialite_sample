@@ -7,10 +7,8 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
+  testing-windows:
     runs-on: windows-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -23,3 +21,17 @@ jobs:
     - name: Test
       working-directory: src
       run: dotnet test
+  testing-linux:
+    runs-on: linux-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Build
+      working-directory: src
+      run: dotnet build
+    - name: Test
+      working-directory: src
+      run: apk-get update & apt-get install libsqlite3-mod-spatialite & dotnet test
