@@ -89,11 +89,11 @@ For code see SpatialiteDapperNtsTests.cs
             string sql = "SELECT name, ST_ASBinary(GEOMETRY) as geometry FROM countries";
 
             string connectString = "Data Source=" + db;
-            Loader.EnsureLoadable(package: "mod_spatialite",library: "mod_spatialite");
-
             var connection = new SqliteConnection(connectString);
-            connection.LoadExtension("mod_spatialite");
             await connection.OpenAsync();
+            connection.EnableExtensions();
+
+            SpatialiteLoader.Load(connection);
             var countries = await connection.QueryAsync<Country>(sql);
             Assert.IsTrue(countries.AsList().Count == 245);
             var country1 = countries.First();
