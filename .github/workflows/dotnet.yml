@@ -17,7 +17,7 @@ jobs:
         dotnet-version: 6.0.x
     - name: Test
       working-directory: src
-      run: brew install sqlite3 libspatialite --force & dotnet test
+      run: brew install sqlite3 libspatialite --force & brew link sqlite & dotnet test
   testing-ubuntu:
     runs-on: ubuntu-latest
     steps:
